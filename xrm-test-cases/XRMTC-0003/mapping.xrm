@@ -1,0 +1,35 @@
+// based on YARRRMLTC-0003
+output rml
+
+map StudentMapping from student {
+	subject template "http://example.com/{0}/{1}" with ID Name;
+
+
+	properties
+		foaf.name from Name;
+}
+
+
+// Source
+logical-source student {
+	type rdb
+	source query "Select ('Student' || 'ID' ) AS StudentId
+          , 'ID'
+          , 'Name'
+          from 'Student'"
+
+	referenceables
+		Name
+		ID
+}
+
+
+// Vocab
+vocabulary foaf {
+	prefix "foaf" "http://xmlns.com/foaf/0.1/"
+
+	classes
+
+	properties
+		name
+}

@@ -1,0 +1,74 @@
+// based on YARRRMLTC-0013
+output rml
+
+map PatientMapping from patient {
+	subject template "http://example.com/Patient/{0}" with ID;
+
+		
+	properties
+		rdf.^type constant foaf.Person;
+		ex.id from ID with datatype xsd.integer;
+		ex.firstName from FirstName with datatype xsd.string;
+		ex.lastName from LastName with datatype xsd.string;
+		ex.gender from Sex with datatype xsd.string;
+		ex.weight from Weight with datatype xsd.float;
+		ex.height from Height with datatype xsd.float;
+}
+
+
+// Source
+logical-source patient {
+	type rdb
+	source "Patient"
+
+	referenceables
+		ID
+		FirstName
+		LastName
+		Sex
+		Weight
+		Height
+}
+
+
+// Vocab
+vocabulary xsd {
+	prefix "xsd" "http://www.w3.org/2001/XMLSchema#"
+
+	datatypes
+		integer
+		float
+		string
+}
+vocabulary foaf {
+	prefix "foaf" "http://xmlns.com/foaf/0.1/"
+
+	classes
+		Person
+
+	properties
+		name
+}
+
+vocabulary rdf {
+	prefix "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+
+	classes
+
+	properties
+		^type
+}
+
+vocabulary ex {
+	prefix "ex" "http://example.com/"
+
+	classes
+
+	properties
+		id
+		firstName
+		lastName
+		gender
+		weight
+		height
+}

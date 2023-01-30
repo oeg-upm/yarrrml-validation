@@ -1,0 +1,24 @@
+PREFIX rr: <http://www.w3.org/ns/r2rml#>
+PREFIX rml: <http://semweb.mmlab.be/ns/rml#>
+PREFIX ql: <http://semweb.mmlab.be/ns/ql#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+<#StudentMapping>
+	a rr:TriplesMap;
+
+	rml:logicalSource [
+		rml:source "Student";
+		rml:referenceFormulation rr:SQL2008
+	];
+
+	rr:subjectMap [
+		rr:template "http://example.com/Student{ID}"
+	];
+
+	rr:predicateObjectMap [
+		rr:predicate foaf:name;
+		rr:objectMap [
+			rr:template "{FirstName} {LastName}";
+			rr:termType rr:Literal
+		]
+	].

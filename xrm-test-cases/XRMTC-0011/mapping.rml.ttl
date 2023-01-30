@@ -1,0 +1,74 @@
+PREFIX rr: <http://www.w3.org/ns/r2rml#>
+PREFIX rml: <http://semweb.mmlab.be/ns/rml#>
+PREFIX ql: <http://semweb.mmlab.be/ns/ql#>
+PREFIX ex: <http://example.com/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<#PatientMapping>
+	a rr:TriplesMap;
+	
+	rml:logicalSource [
+		rml:source "patient.csv";
+		rml:referenceFormulation ql:CSV
+	];
+	
+	rr:subjectMap [
+		rr:template "http://example.com/Patient/{ID}"
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant foaf:Person
+		]
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate ex:id;
+		rr:objectMap [
+			rml:reference "ID";
+			rr:datatype xsd:integer
+		]
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate ex:firstName;
+		rr:objectMap [
+			rml:reference "FirstName";
+			rr:datatype xsd:string
+		]
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate ex:lastName;
+		rr:objectMap [
+			rml:reference "LastName";
+			rr:datatype xsd:string
+		]
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate ex:gender;
+		rr:objectMap [
+			rml:reference "Sex";
+			rr:datatype xsd:string
+		]
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate ex:weight;
+		rr:objectMap [
+			rml:reference "Weight";
+			rr:datatype xsd:float
+		]
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate ex:height;
+		rr:objectMap [
+			rml:reference "Height";
+			rr:datatype xsd:float
+		]
+	].
+	

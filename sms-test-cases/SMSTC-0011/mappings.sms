@@ -1,0 +1,14 @@
+PREFIX ex:    <http://example.com/>
+PREFIX foaf:  <http://xmlns.com/foaf/0.1/>
+
+MAPPING
+FROM SQL {
+    SELECT ID, Name FROM student
+}
+TO {
+    ?student foaf:name ?Name.
+}
+
+WHERE{
+    BIND(TEMPLATE("http://example.com/{ID}/{Name}") AS ?student)
+}

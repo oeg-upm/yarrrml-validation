@@ -1,0 +1,24 @@
+@prefix : <http://api.stardog.com/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix stardog: <tag:stardog:api:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<http://example.com/block/00000000000000000028484e3ba77273ebd245f944e574e1d4038d9247a7ff8e> a <http://example.com/Block> ;
+   <http://example.com/height> 575144 ;
+   <http://example.com/block/00000000000000000028484e3ba77273ebd245f944e574e1d4038d9247a7ff8e> "00000000000000000028484e3ba77273ebd245f944e574e1d4038d9247a7ff8e" ;
+   <http://example.com/time> "2019-09-23T19:27:47.591Z"^^xsd:dateTime ;
+   <http://example.com/includesTx> <http://example.com/tx/445123952> , <http://example.com/tx/445058113> , <http://example.com/tx/445054577> , <http://example.com/tx/445061250> .
+<http://example.com/tx/445123952> a <http://example.com/Tx> ;
+   <http://example.com/ex> "http://example.com/block/" ;
+   <http://example.com/index> 445123952 .
+<http://example.com/tx/445058113> a <http://example.com/Tx> ;
+   <http://example.com/ex> "http://example.com/block/" ;
+   <http://example.com/index> 445058113 .
+<http://example.com/tx/445054577> a <http://example.com/Tx> ;
+   <http://example.com/ex> "http://example.com/block/" ;
+   <http://example.com/index> 445054577 .
+<http://example.com/tx/445061250> a <http://example.com/Tx> ;
+   <http://example.com/ex> "http://example.com/block/" ;
+   <http://example.com/index> 445061250 .

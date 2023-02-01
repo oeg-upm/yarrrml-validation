@@ -1,0 +1,14 @@
+@prefix : <http://api.stardog.com/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix stardog: <tag:stardog:api:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<http://example.com/Patient/10> a <http://xmlns.com/foaf/0.1/Person> ;
+   <http://example.com/id> 10 ;
+   <http://example.com/firstName> "James" ;
+   <http://example.com/gender> "Male" ;
+   <http://example.com/height> "1.79"^^xsd:float ;
+   <http://example.com/lastName> "Ward" ;
+   <http://example.com/weight> "85.0"^^xsd:float .

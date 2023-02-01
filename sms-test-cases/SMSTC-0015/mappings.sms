@@ -1,0 +1,17 @@
+PREFIX ex:    <http://example.com/>
+PREFIX foaf:  <http://xmlns.com/foaf/0.1/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+MAPPING
+FROM CSV {
+}
+TO {
+    <<?example_one ex:p ?example_two>> ex:q ?example_three.
+}
+
+WHERE{
+    BIND(TEMPLATE("http://example/{c1}") AS ?example_one)
+    BIND(TEMPLATE("http://example/{c2}") AS ?example_two)
+    BIND(TEMPLATE("http://example/{c3}") AS ?example_three)
+}

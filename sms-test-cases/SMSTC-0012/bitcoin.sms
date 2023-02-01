@@ -1,0 +1,31 @@
+PREFIX : <http://example.com/>
+ 
+MAPPING
+FROM JSON {
+ {
+   "hash" : "?hash",
+   "time" : "?time",
+   "block_index" : "?block_index",
+   "height" : "?height",
+   "txIndexes" : [ "?txIndex" ]
+ }
+}
+TO {
+ ?block a :Block ;
+   ?block ?hash ;
+   :time ?dateTime ;
+   :height ?height ;
+   :includesTx ?tx .
+?tx a :Tx ;
+    :index ?txIndex ;
+    :ex ?test .
+}
+WHERE {
+ bind(xsd:dateTime(?time) as ?dateTime)
+ bind(template("http://example.com/tx/{txIndex}") as ?tx)
+ bind(template("http://example.com/block/{hash}") as ?block)
+ bind(lcase("http://example.com/BLOCK/") as ?test)
+}
+
+
+

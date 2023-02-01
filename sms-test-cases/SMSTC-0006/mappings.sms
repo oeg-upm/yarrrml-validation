@@ -1,0 +1,16 @@
+PREFIX ex:    <http://example.com/>
+PREFIX foaf:  <http://xmlns.com/foaf/0.1/>
+
+MAPPING
+FROM CSV {
+}
+TO {
+    ?student a ex:Student;
+        a foaf:Person;
+        ex:id ?ID;
+        foaf:name ?Name. 
+}
+
+WHERE{
+    BIND(TEMPLATE("http://example.com/{ID}/{FirstName}") AS ?student)
+}

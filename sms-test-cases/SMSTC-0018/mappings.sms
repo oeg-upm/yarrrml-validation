@@ -1,0 +1,15 @@
+PREFIX ex:    <http://example.com/>
+PREFIX foaf:  <http://xmlns.com/foaf/0.1/>
+
+MAPPING
+FROM CSV {
+}
+TO {
+    ?student foaf:name ?student_name; 
+}
+
+WHERE{
+    BIND(TEMPLATE("http://example.com/{Name}") AS ?student)
+    BIND(CONCAT(?Lang1,?Lang2) AS ?Lang)
+    BIND(STRLANG(?Name,?Lang) AS ?student_name)
+}

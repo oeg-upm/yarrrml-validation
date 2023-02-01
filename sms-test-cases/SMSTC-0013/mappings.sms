@@ -1,0 +1,27 @@
+PREFIX ex:    <http://example.com/>
+PREFIX foaf:  <http://xmlns.com/foaf/0.1/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+MAPPING
+FROM CSV {
+}
+TO {
+    ?patient a foaf:Person;
+        ex:id ?patient_id;
+        ex:firstName ?patient_first_name;
+        ex:lastName ?patient_last_name;
+        ex:gender ?patient_sex;
+        ex:weight ?patient_weight;
+        ex:height ?patient_height.
+}
+
+WHERE{
+    BIND(TEMPLATE("http://example.com/Patient/{ID}") AS ?patient)
+    BIND(xsd:integer(?ID) AS ?patient_id)
+    BIND(xsd:string(?FirstName) AS ?patient_first_name)
+    BIND(xsd:string(?LastName) AS ?patient_last_name)
+    BIND(xsd:string(?Sex) AS ?patient_sex)
+    BIND(xsd:float(?Weight) AS ?patient_weight)
+    BIND(xsd:float(?Height) AS ?patient_height)
+}

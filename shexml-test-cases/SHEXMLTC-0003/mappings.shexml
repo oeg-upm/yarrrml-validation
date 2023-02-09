@@ -1,0 +1,15 @@
+PREFIX ex: <http://example.org/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SOURCE student_db <jdbc:mysql://localhost:3306/test>
+
+ITERATOR db_iter <sql: SELECT * FROM student;> {
+    FIELD name <Name>
+    FIELD id <ID>
+}
+
+EXPRESSION name_id <student_db.db_iter.id + "/" + student_db.db_iter.name>
+EXPRESSION students <student_db.db_iter>
+
+:Name ex:[name_id]{
+    foaf:name [students.name];
+}

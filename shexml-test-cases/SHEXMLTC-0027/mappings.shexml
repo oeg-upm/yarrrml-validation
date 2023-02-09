@@ -1,0 +1,17 @@
+PREFIX ex: <http://example.org/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+FUNCTIONS helper <scala: https://raw.githubusercontent.com/herminiogg/ShExML/enhancement-%23121/src/test/resources/functions.scala>
+SOURCE csv_path <https://raw.githubusercontent.com/oeg-upm/yarrrml-validation/main/shexml-test-cases/extra-datasources/students_year.csv>
+
+ITERATOR csv_iter <csvperrow> {
+    FIELD name <Name>
+    FIELD surname <Surname>
+    Field year <Year>
+}
+
+EXPRESSION students <csv_path.csv_iter>
+
+:Ex ex:[students.name]{
+    foaf:name [helper.nameAndYear(students.name, students.year)];
+    foaf:surname [helper.allCapitals(students.surname)];
+}

@@ -1,0 +1,63 @@
+@prefix :      <http://example.com/> .
+@prefix rml:   <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr:    <http://www.w3.org/ns/r2rml#> .
+@prefix d2rq:  <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix ql:    <http://semweb.mmlab.be/ns/ql#> .
+@prefix map:   <http://mapping.example.com/> .
+
+map:po_4  a              rr:PredicateObjectMap ;
+        rr:objectMap     map:o_4 ;
+        rr:predicateMap  map:p_4 .
+
+map:p_1  a           rr:predicateMap ;
+        rr:constant  :name .
+
+map:l_948111862  a                rml:LogicalSource ;
+        rml:iterator              "$.films[*]" ;
+        rml:referenceFormulation  ql:JSONPath ;
+        rml:source                "https://rawgit.com/herminiogg/ShExML/master/src/test/resources/films.json" .
+
+map:po_2  a              rr:PredicateObjectMap ;
+        rr:objectMap     map:o_2 ;
+        rr:predicateMap  map:p_2 .
+
+map:m_1  a                     rr:TriplesMap ;
+        rml:logicalSource      map:l_948111862 ;
+        rr:predicateObjectMap  map:po_4 , map:po_3 , map:po_2 , map:po_1 ;
+        rr:subjectMap          map:s_1 .
+
+map:p_4  a           rr:predicateMap ;
+        rr:constant  :director .
+
+map:o_3  a           rr:ObjectMap ;
+        rr:template  "{country}" ;
+        rr:termType  rr:Literal .
+
+map:p_2  a           rr:predicateMap ;
+        rr:constant  :year .
+
+map:o_1  a           rr:ObjectMap ;
+        rr:template  "{name}" ;
+        rr:termType  rr:Literal .
+
+map:po_3  a              rr:PredicateObjectMap ;
+        rr:objectMap     map:o_3 ;
+        rr:predicateMap  map:p_3 .
+
+map:o_4  a           rr:ObjectMap ;
+        rr:template  "{director}" ;
+        rr:termType  rr:Literal .
+
+map:po_1  a              rr:PredicateObjectMap ;
+        rr:objectMap     map:o_1 ;
+        rr:predicateMap  map:p_1 .
+
+map:p_3  a           rr:predicateMap ;
+        rr:constant  :country .
+
+map:s_1  a           rr:SubjectMap ;
+        rr:template  "http://example.com/{id}" .
+
+map:o_2  a           rr:ObjectMap ;
+        rr:template  "{year}" ;
+        rr:termType  rr:Literal .

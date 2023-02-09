@@ -1,0 +1,18 @@
+PREFIX : <http://example.com/>
+SOURCE films_xml_file <https://rawgit.com/herminiogg/ShExML/master/src/test/resources/films.xml>
+ITERATOR film_xml <xpath: //film> {
+  FIELD id <@id>
+  FIELD name <name>
+  FIELD year <year>
+  FIELD country <country>
+  FIELD directors <directors/director>
+}
+
+EXPRESSION films <films_xml_file.film_xml>
+
+:Films :[films.id] {
+  :name [films.name] ;
+  :year [films.year] ;
+  :country [films.country] ;
+  :director [films.directors] ;
+}

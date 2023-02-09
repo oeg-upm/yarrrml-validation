@@ -1,0 +1,13 @@
+PREFIX ex: <http://example.org/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SOURCE csv_path <https://raw.githubusercontent.com/oeg-upm/yarrrml-validation/main/sms-test-cases/SMSTC-0001/students.csv>
+
+ITERATOR csv_iter <csvperrow> {
+    FIELD name <Name>
+}
+
+EXPRESSION students <csv_path.csv_iter>
+
+:Ex ex:[students.name]{
+    foaf:name [students.name] @en;
+}

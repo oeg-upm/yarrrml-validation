@@ -1,0 +1,34 @@
+@prefix rml:   <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr:    <http://www.w3.org/ns/r2rml#> .
+@prefix ex:    <http://example.org/> .
+@prefix d2rq:  <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix ql:    <http://semweb.mmlab.be/ns/ql#> .
+@prefix map:   <http://mapping.example.com/> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+
+map:1   a              rml:LanguageMap ;
+        rml:reference  "Lang" .
+
+map:p_1  a           rr:predicateMap ;
+        rr:constant  foaf:name .
+
+map:l_788842668  a                rml:LogicalSource ;
+        rml:referenceFormulation  ql:CSV ;
+        rml:source                "https://raw.githubusercontent.com/oeg-upm/yarrrml-validation/main/sms-test-cases/SMSTC-0017/students.csv" .
+
+map:m_1  a                     rr:TriplesMap ;
+        rml:logicalSource      map:l_788842668 ;
+        rr:predicateObjectMap  map:po_1 ;
+        rr:subjectMap          map:s_1 .
+
+map:o_1  a               rr:ObjectMap ;
+        rml:languageMap  map:1 ;
+        rr:template      "{Name}" ;
+        rr:termType      rr:Literal .
+
+map:po_1  a              rr:PredicateObjectMap ;
+        rr:objectMap     map:o_1 ;
+        rr:predicateMap  map:p_1 .
+
+map:s_1  a           rr:SubjectMap ;
+        rr:template  "http://example.org/{Name}" .

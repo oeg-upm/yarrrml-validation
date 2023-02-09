@@ -1,0 +1,312 @@
+@prefix :      <http://example.com/> .
+@prefix schema: <http://schema.org/> .
+@prefix rml:   <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr:    <http://www.w3.org/ns/r2rml#> .
+@prefix d2rq:  <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dbr:   <http://dbpedia.org/resource/> .
+@prefix ql:    <http://semweb.mmlab.be/ns/ql#> .
+@prefix map:   <http://mapping.example.com/> .
+
+map:po_4  a              rr:PredicateObjectMap ;
+        rr:objectMap     map:o_4 ;
+        rr:predicateMap  map:p_4 .
+
+map:p_3  a           rr:predicateMap ;
+        rr:constant  :year .
+
+map:o_11  a          rr:ObjectMap ;
+        rr:template  "http://dbpedia.org/resource/{crew/music}" ;
+        rr:termType  rr:IRI .
+
+map:o_3  a           rr:ObjectMap ;
+        rr:template  "http://dbpedia.org/resource/{year}" ;
+        rr:termType  rr:IRI .
+
+map:p_16  a          rr:predicateMap ;
+        rr:constant  :name .
+
+map:po_16  a             rr:PredicateObjectMap ;
+        rr:objectMap     map:o_16 ;
+        rr:predicateMap  map:p_16 .
+
+map:s_2  a           rr:SubjectMap ;
+        rr:template  "http://example.com/{id}" .
+
+map:p_10  a          rr:predicateMap ;
+        rr:constant  :screenwritter .
+
+map:m_3  a                     rr:TriplesMap ;
+        rml:logicalSource      map:l_924435441 ;
+        rr:predicateObjectMap  map:po_21 , map:po_20 ;
+        rr:subjectMap          map:s_5 .
+
+map:po_10  a             rr:PredicateObjectMap ;
+        rr:objectMap     map:o_10 ;
+        rr:predicateMap  map:p_10 .
+
+map:po_9  a              rr:PredicateObjectMap ;
+        rr:objectMap     map:o_9 ;
+        rr:predicateMap  map:p_9 .
+
+map:p_23  a          rr:predicateMap ;
+        rr:constant  :appear_on .
+
+map:p_8  a           rr:predicateMap ;
+        rr:constant  schema:director .
+
+map:o_16  a          rr:ObjectMap ;
+        rr:template  "{name}" ;
+        rr:termType  rr:Literal .
+
+map:o_8  a           rr:ObjectMap ;
+        rr:template  "http://dbpedia.org/resource/{crew.director}" ;
+        rr:termType  rr:IRI .
+
+map:po_3  a              rr:PredicateObjectMap ;
+        rr:objectMap     map:o_3 ;
+        rr:predicateMap  map:p_3 .
+
+map:p_2  a           rr:predicateMap ;
+        rr:constant  schema:name .
+
+map:o_10  a          rr:ObjectMap ;
+        rr:template  "http://dbpedia.org/resource/{crew.screenwritter}" ;
+        rr:termType  rr:IRI .
+
+map:o_2  a           rr:ObjectMap ;
+        rr:template  "{name}" ;
+        rr:termType  rr:Literal .
+
+map:p_15  a          rr:predicateMap ;
+        rr:constant  :name .
+
+map:po_15  a             rr:PredicateObjectMap ;
+        rr:objectMap     map:o_15 ;
+        rr:predicateMap  map:p_15 .
+
+map:s_1  a           rr:SubjectMap ;
+        rr:template  "http://example.com/{@id}" .
+
+map:m_2  a                     rr:TriplesMap ;
+        rml:logicalSource      map:l_1123981524 ;
+        rr:predicateObjectMap  map:po_16 ;
+        rr:subjectMap          map:s_4 .
+
+map:po_8  a              rr:PredicateObjectMap ;
+        rr:objectMap     map:o_8 ;
+        rr:predicateMap  map:p_8 .
+
+map:p_7  a           rr:predicateMap ;
+        rr:constant  schema:director .
+
+map:po_22  a             rr:PredicateObjectMap ;
+        rr:objectMap     map:o_22 ;
+        rr:predicateMap  map:p_25 .
+
+map:o_15  a          rr:ObjectMap ;
+        rr:template  "{name}" ;
+        rr:termType  rr:Literal .
+
+map:o_7  a           rr:ObjectMap ;
+        rr:template  "http://dbpedia.org/resource/{crew/directors/director}" ;
+        rr:termType  rr:IRI .
+
+map:po_2  a              rr:PredicateObjectMap ;
+        rr:objectMap     map:o_2 ;
+        rr:predicateMap  map:p_2 .
+
+map:p_1  a           rr:predicateMap ;
+        rr:constant  schema:name .
+
+map:l_1123981524  a               rml:LogicalSource ;
+        rml:iterator              "$.films[*].cast[*]" ;
+        rml:referenceFormulation  ql:JSONPath ;
+        rml:source                "http://shexml.herminiogarcia.com/files/films.json" .
+
+map:o_1  a           rr:ObjectMap ;
+        rr:template  "{name}" ;
+        rr:termType  rr:Literal .
+
+map:p_14  a          rr:predicateMap ;
+        rr:constant  :cinematographer .
+
+map:o_22  a                  rr:ObjectMap ;
+        rr:parentTriplesMap  map:m_3 .
+
+map:l_648434603  a                rml:LogicalSource ;
+        rml:iterator              "//film" ;
+        rml:referenceFormulation  ql:XPath ;
+        rml:source                "http://shexml.herminiogarcia.com/files/films.xml" .
+
+map:po_14  a             rr:PredicateObjectMap ;
+        rr:objectMap     map:o_14 ;
+        rr:predicateMap  map:p_14 .
+
+map:m_1  a                     rr:TriplesMap ;
+        rml:logicalSource      map:l_492581601 ;
+        rr:predicateObjectMap  map:po_17 , map:po_15 ;
+        rr:subjectMap          map:s_3 .
+
+map:po_7  a              rr:PredicateObjectMap ;
+        rr:objectMap     map:o_7 ;
+        rr:predicateMap  map:p_7 .
+
+map:p_21  a          rr:predicateMap ;
+        rr:constant  :name .
+
+map:p_6  a           rr:predicateMap ;
+        rr:constant  schema:countryOfOrigin .
+
+map:po_21  a             rr:PredicateObjectMap ;
+        rr:objectMap     map:o_21 ;
+        rr:predicateMap  map:p_23 .
+
+map:o_14  a          rr:ObjectMap ;
+        rr:template  "http://dbpedia.org/resource/{crew.cinematography}" ;
+        rr:termType  rr:IRI .
+
+map:o_6  a           rr:ObjectMap ;
+        rr:template  "http://dbpedia.org/resource/{country}" ;
+        rr:termType  rr:IRI .
+
+map:p_19  a          rr:predicateMap ;
+        rr:constant  schema:actor .
+
+map:po_1  a              rr:PredicateObjectMap ;
+        rr:objectMap     map:o_1 ;
+        rr:predicateMap  map:p_1 .
+
+map:po_19  a             rr:PredicateObjectMap ;
+        rr:objectMap     map:o_19 ;
+        rr:predicateMap  map:p_20 .
+
+map:s_5  a           rr:SubjectMap ;
+        rr:template  "http://dbpedia.org/resource/{name}" .
+
+map:p_13  a          rr:predicateMap ;
+        rr:constant  :cinematographer .
+
+map:o_21  a          rr:ObjectMap ;
+        rr:template  "http://example.com/{../../@id}" ;
+        rr:termType  rr:IRI .
+
+map:po_13  a             rr:PredicateObjectMap ;
+        rr:objectMap     map:o_13 ;
+        rr:predicateMap  map:p_13 .
+
+map:l_724143787  a                rml:LogicalSource ;
+        rml:iterator              "$.films[*]" ;
+        rml:referenceFormulation  ql:JSONPath ;
+        rml:source                "http://shexml.herminiogarcia.com/files/films.json" .
+
+map:o_19  a                  rr:ObjectMap ;
+        rr:parentTriplesMap  map:m_2 .
+
+map:po_6  a              rr:PredicateObjectMap ;
+        rr:objectMap     map:o_6 ;
+        rr:predicateMap  map:p_6 .
+
+map:p_20  a          rr:predicateMap ;
+        rr:constant  schema:actor .
+
+map:p_5  a           rr:predicateMap ;
+        rr:constant  schema:countryOfOrigin .
+
+map:po_20  a             rr:PredicateObjectMap ;
+        rr:objectMap     map:o_20 ;
+        rr:predicateMap  map:p_21 .
+
+map:o_13  a          rr:ObjectMap ;
+        rr:template  "http://dbpedia.org/resource/{crew/photography}" ;
+        rr:termType  rr:IRI .
+
+map:o_5  a           rr:ObjectMap ;
+        rr:template  "http://dbpedia.org/resource/{country}" ;
+        rr:termType  rr:IRI .
+
+map:po_18  a             rr:PredicateObjectMap ;
+        rr:objectMap     map:o_18 ;
+        rr:predicateMap  map:p_19 .
+
+map:s_4  a           rr:SubjectMap ;
+        rr:template  "http://dbpedia.org/resource/{name}" .
+
+map:p_12  a          rr:predicateMap ;
+        rr:constant  schema:musicBy .
+
+map:m_5  a                     rr:TriplesMap ;
+        rml:logicalSource      map:l_724143787 ;
+        rr:predicateObjectMap  map:po_6 , map:po_2 , map:po_12 , map:po_19 , map:po_10 , map:po_4 , map:po_14 , map:po_8 ;
+        rr:subjectMap          map:s_2 .
+
+map:o_20  a          rr:ObjectMap ;
+        rr:template  "{name}" ;
+        rr:termType  rr:Literal .
+
+map:p_25  a          rr:predicateMap ;
+        rr:constant  schema:actor .
+
+map:po_12  a             rr:PredicateObjectMap ;
+        rr:objectMap     map:o_12 ;
+        rr:predicateMap  map:p_12 .
+
+map:o_18  a                  rr:ObjectMap ;
+        rr:parentTriplesMap  map:m_1 .
+
+map:po_5  a              rr:PredicateObjectMap ;
+        rr:objectMap     map:o_5 ;
+        rr:predicateMap  map:p_5 .
+
+map:p_4  a           rr:predicateMap ;
+        rr:constant  :year .
+
+map:o_12  a          rr:ObjectMap ;
+        rr:template  "http://dbpedia.org/resource/{crew.music}" ;
+        rr:termType  rr:IRI .
+
+map:o_4  a           rr:ObjectMap ;
+        rr:template  "http://dbpedia.org/resource/{year}" ;
+        rr:termType  rr:IRI .
+
+map:p_17  a          rr:predicateMap ;
+        rr:constant  :appear_on .
+
+map:l_492581601  a                rml:LogicalSource ;
+        rml:iterator              "//film/cast/actor" ;
+        rml:referenceFormulation  ql:XPath ;
+        rml:source                "http://shexml.herminiogarcia.com/files/films.xml" .
+
+map:po_17  a             rr:PredicateObjectMap ;
+        rr:objectMap     map:o_17 ;
+        rr:predicateMap  map:p_17 .
+
+map:s_3  a           rr:SubjectMap ;
+        rr:template  "http://dbpedia.org/resource/{name}" .
+
+map:p_11  a          rr:predicateMap ;
+        rr:constant  schema:musicBy .
+
+map:m_4  a                     rr:TriplesMap ;
+        rml:logicalSource      map:l_648434603 ;
+        rr:predicateObjectMap  map:po_3 , map:po_1 , map:po_18 , map:po_9 , map:po_22 , map:po_13 , map:po_7 , map:po_11 , map:po_5 ;
+        rr:subjectMap          map:s_1 .
+
+map:po_11  a             rr:PredicateObjectMap ;
+        rr:objectMap     map:o_11 ;
+        rr:predicateMap  map:p_11 .
+
+map:p_9  a           rr:predicateMap ;
+        rr:constant  :screenwritter .
+
+map:l_924435441  a                rml:LogicalSource ;
+        rml:iterator              "//film/cast/actress" ;
+        rml:referenceFormulation  ql:XPath ;
+        rml:source                "http://shexml.herminiogarcia.com/files/films.xml" .
+
+map:o_17  a          rr:ObjectMap ;
+        rr:template  "http://example.com/{../../@id}" ;
+        rr:termType  rr:IRI .
+
+map:o_9  a           rr:ObjectMap ;
+        rr:template  "http://dbpedia.org/resource/{crew//screenwritter}" ;
+        rr:termType  rr:IRI .

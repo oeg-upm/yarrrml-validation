@@ -1,0 +1,15 @@
+PREFIX ex: <http://example.org/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SOURCE csv_path <https://raw.githubusercontent.com/oeg-upm/yarrrml-validation/main/shexml-test-cases/extra-datasources/students.csv>
+
+ITERATOR csv_iter <csvperrow> {
+    FIELD name <Name>
+    FIELD datatype <Datatype>
+}
+
+EXPRESSION students <csv_path.csv_iter>
+
+:Ex ex:[students.name]{
+    foaf:name [students.name] xsd:[students.datatype];
+}

@@ -1,60 +1,27 @@
 # Validation fo Human-friendly mapping serializations
 
 
-This repository contains the test cases for XRM, SMS2, and ShExML extracted from the [YARRRML test cases](https://github.com/oeg-upm/yarrrml-validation/tree/main/test).
+This repository contains the test cases for YARRRML, and their corresponding translation (when it is possible) to XRM, SMS2, and ShExML.
 
 
-## YARRRML test-cases
+## System support
 
-|YARRRML Test-Case|Adapted from   |Description                                                                                                                                                                                 |Classification     |
-|:------------:|:-------------:|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------:|
-|YARRRMLTC-0001| R2RMLTC0001a  |Tests URI generation with one reference in rr:template                                                                                                                                      |       R2RML       |
-|YARRRMLTC-0002| R2RMLTC0002a  |Tests URI generation with two references in rr:template                                                                                                                                     |       R2RML       |
-|YARRRMLTC-0003| R2RMLTC0002d  |Tests subject IRI generation with two references extracted with a SQL query                                                                                                                 |       R2RML       |
-|YARRRMLTC-0004| R2RMLTC0002i  |Tests two references and SQL version identifier                                                                                                                                             |       R2RML       |
-|YARRRMLTC-0005| R2RMLTC0009a  |Tests a join condition between two triples maps                                                                                                                                             |       R2RML       |
-|YARRRMLTC-0006|       -       |Tests external table with queryFormulation                                                                                                                                                  |       R2RML       |
-|YARRRMLTC-0007|       -       |Tests internal table with queryFormulation                                                                                                                                                  |       R2RML       |
-|YARRRMLTC-0008| R2RMLTC0003c  |Tests literal generation with two references in rr:template                                                                                                                                 |       R2RML       |
-|YARRRMLTC-0009| R2RMLTC0007d  |Tests URI generation with two references in rr:template and rdf:type instead of rr:type                                                                                                     |       R2RML       |
-|YARRRMLTC-0010| R2RMLTC0009b  |Tests a join condition between two triples maps assigned to different named graphs                                                                                                          |       R2RML       |
-|YARRRMLTC-0011| R2RMLTC0012c  |Tests the generation of an object with two references with quotes                                                                                                                           |       R2RML       |
-|YARRRMLTC-0012| R2RMLTC0012d  |Tests the generation of an object with two references without quotes                                                                                                                        |       R2RML       |
-|YARRRMLTC-0013| R2RMLTC0016a  |Tests the generation of the datatypes string, float and integer                                                                                                                             |       R2RML       |
-|YARRRMLTC-0014|       -       |Tests the use of multiple rr:predicateMaps in one rr:predicateObjectMap                                                                                                                     |       R2RML       |
-|YARRRMLTC-0015| R2RMLTC0020a  |Tests the generation of two objects within a single rr:predicateObjectMap and iri as object                                                                                                 |       R2RML       |
-|YARRRMLTC-0016|YARRRMLTC-0001 |Tests CSV format                                                                                                                                                                            |     RML-core      |
-|YARRRMLTC-0017|YARRRMLTC-0002 |Tests XML format                                                                                                                                                                            |     RML-core      |
-|YARRRMLTC-0018|YARRRMLTC-0003 |Tests MYSQL format                                                                                                                                                                          |     RML-core      |
-|YARRRMLTC-0019|YARRRMLTC-0005 |Tests JSON format                                                                                                                                                                           |     RML-core      |
-|YARRRMLTC-0020|YARRRMLTC-0006 |Tests MYSQL format and external source                                                                                                                                                      |     RML-core      |
-|YARRRMLTC-0021|YARRRMLTC-0007 |Tests MYSQL format and internal source                                                                                                                                                      |     RML-core      |
-|YARRRMLTC-0022|YARRRMLTC-0013 |Tests CSV format and datatype source                                                                                                                                                        |     RML-core      |
-|YARRRMLTC-0023|       -       |Tests YARRRML mapping merging based on triples map id                                                                                                                                       |     RML-core      |
-|YARRRMLTC-0024|RMLSTARTC-0001a|Tests the creation of a asserted quoted triple (with a blank node as subject) in the position of subject with data from one file                                                            |     RML-star      |
-|YARRRMLTC-0025|RMLSTARTC-0001b|Tests the creation of a asserted quoted triple (with a blank node as subject) in the position of subject with data from two files                                                           |     RML-star      |
-|YARRRMLTC-0026|RMLSTARTC-0003a|Tests the creation of two-level recursiveness of asserted quoted triples as subjects with data from one file                                                                                |     RML-star      |
-|YARRRMLTC-0027|RMLSTARTC-0005a|Tests the creation of a non-asserted quoted triple in the position of subject with data from one file                                                                                       |     RML-star      |
-|YARRRMLTC-0028|RMLSTARTC-0006a|Tests the creation of a non-asserted quoted triple in the position of object with data from one file                                                                                        |     RML-star      |
-|YARRRMLTC-0029|RMLSTARTC-0008a|Tests the creation of a triple with non-asserted quoted triples as subject and object, both triples have in turn non-asserted quoted triples in subject and object with data form one source|     RML-star      |
-|YARRRMLTC-0030|       -       |Tests static generation of language                                                                                                                                                         |   RML-language    |
-|YARRRMLTC-0031|       -       |Tests dynamic generation of language tag with one reference                                                                                                                                 |   RML-language    |
-|YARRRMLTC-0032|       -       |Tests dynamic generation of language tag with two references                                                                                                                                |   RML-language    |
-|YARRRMLTC-0033|       -       |Tests dynamic generation of datatypes with one reference                                                                                                                                    |   RML-datatype    |
-|YARRRMLTC-0034|       -       |Tests dynamic generation of datatypes with two references                                                                                                                                   |   RML-datatype    |
-|YARRRMLTC-0035|       -       |Tests TTL target output in subject                                                                                                                                                          |    RML-target     |
-|YARRRMLTC-0036|       -       |Tests TTL target output in subject in abbreviated syntax                                                                                                                                    |    RML-target     |
-|YARRRMLTC-0037|       -       |Tests TTL target output in subject in abbreviated syntax with internal reference                                                                                                            |    RML-target     |
-|YARRRMLTC-0038|       -       |Tests TTL target output in subject with internal reference                                                                                                                                  |    RML-target     |
-|YARRRMLTC-0039|       -       |Tests TTL target output in named graph assignation with internal reference                                                                                                                  |    RML-target     |
-|YARRRMLTC-0040|       -       |Tests TTL target output in object with internal reference                                                                                                                                   |    RML-target     |
-|YARRRMLTC-0041|       -       |Tests one function in object with one input parameter                                                                                                                                       |     RML-FNML      |
-|YARRRMLTC-0042|       -       |Tests one function in subject with one input parameter                                                                                                                                      |     RML-FNML      |
-|YARRRMLTC-0043|       -       |Tests a function within a function in object with one input parameter each                                                                                                                  |     RML-FNML      |
-|YARRRMLTC-0044|       -       |Tests two functions in object in different rr:PredicateObjectMaps with one parameter each                                                                                                   |     RML-FNML      |
-|YARRRMLTC-0045|       -       |Tests a function within a function in object in abbreviated syntax                                                                                                                          |     RML-FNML      |
-|YARRRMLTC-0046|       -       |Tests two functions in different rr:PredicateObjectMaps with three and one parameters respectively                                                                                          |     RML-FNML      |
-|YARRRMLTC-0047|       -       |Tests a function a rr:PredicateObjectMap, two recursive functions in two rr:PredicateObjectMaps one in abbreviated syntax                                                                   |     RML-FNML      |
-|YARRRMLTC-0048|       -       |Tests a function within a function in predicate with one input parameter each                                                                                                               |     RML-FNML      |
-|YARRRMLTC-0049|       -       |Test inline functions                                                                                                                                                                       |     RML-FNML      |
-|YARRRMLTC-0050|       -       |Test inline quoted and quoted non-asserted                                                                                                                                                  |RML-FNML + RML-star|
+
+* YARRRRML: [YARRRML-translator](https://github.com/oeg-upm/yarrrml-translator) and [YARRRML-parser](https://github.com/RMLio/yarrrml-parser)
+* SheXML: [ShExML  translator](https://github.com/herminiogg/ShExML)
+* SMS: [Stardog (supporting R2RML)](https://www.stardog.com/)
+* XRM: [XRM Translator](https://zazuko.com/products/expressive-rdf-mapper/)
+
+|Features                      |YARRRML-translator|YARRRML-parser|ShExML  translator|Stardog (to RDF)|XRM  Translator|
+|:----------------------------:|:----------------:|:------------:|:----------------:|:--------------:|:-------------:|
+|         [R2]RML-core         |      24/24       |    18/24     |      18/18       |     13/13      |     11/11     |
+|           RML-star           |       6/6        |     N/A      |       N/A        |      2/2       |      N/A      |
+|         RML-language         |       3/3        |     3/3      |       3/3        |      3/3       |      1/1      |
+|         RML-datatype         |       2/2        |     N/A      |       2/2        |      N/A       |      N/A      |
+|          RML-target          |       6/6        |     6/6      |       N/A        |      N/A       |      N/A      |
+|        RML-functions         |       9/9        |     0/9*     |       4/4        |      6/6       |      N/A      |
+|Total w.r.t. its serialization|   100% (50/50)   | 64% (27/42)  |   100% (27/27)   |  100% (24/24)  | 100% (12/12)  |
+|  Total w.r.t. all features   |   100% (50/50)   | 54% (27/50)  |   54% (27/50)    |  48% (24/50)   |  24% (12/50)  |
+
+
+\* It supports functions but translates to another specification

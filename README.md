@@ -14,12 +14,12 @@ This repository contains the test cases for YARRRML, and their corresponding tra
 
 |Features                        |YARRRML translator|YARRRML parser|ShExML  translator|Stardog (to RDF)|XRM  Translator|
 |:------------------------------:|:----------------:|:------------:|:----------------:|:--------------:|:-------------:|
-|          [R2]RML-core          |      24/24       |    18/24     |     18/18**      |     13/13      |     11/11     |
+|          [R2]RML-core          |      23/23       |    18/23     |     18/18**      |     13/13      |     11/11     |
 |            RML-star            |       6/6        |     N/A      |       N/A        |      2/2       |      N/A      |
 |          RML-language          |       3/3        |     3/3      |       3/3        |      3/3       |      1/1      |
 |          RML-datatype          |       2/2        |     N/A      |       0/2        |      N/A       |      N/A      |
 |           RML-target           |       6/6        |     6/6      |       N/A        |      N/A       |      N/A      |
-|         RML-functions          |       9/9        |     0/9*     |       0/4        |      6/6       |      N/A      |
+|         RML-functions          |      10/10       |    0/10*     |       0/4        |      6/6       |      N/A      |
 | Total w.r.t. its serialization |   100% (50/50)   | 64% (27/42)  |   77% (21/27)    |  100% (24/24)  | 100% (12/12)  |
 |   Total w.r.t. all features    |   100% (50/50)   | 54% (27/50)  |   42% (21/50)    |  48% (24/50)   |  24% (12/50)  |
 

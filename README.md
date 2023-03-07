@@ -7,12 +7,12 @@ This repository contains the test cases for YARRRML, and their corresponding tra
 ## System support
 
 
-* YARRRRML: [YARRRML-translator](https://github.com/oeg-upm/yarrrml-translator) and [YARRRML-parser](https://github.com/RMLio/yarrrml-parser)
+* YARRRRML: [YATTER](https://github.com/oeg-upm/yatter) and [YARRRML-parser](https://github.com/RMLio/yarrrml-parser)
 * SheXML: [ShExML  translator](https://github.com/herminiogg/ShExML)
 * SMS: [Stardog (supporting R2RML)](https://www.stardog.com/)
 * XRM: [XRM Translator](https://zazuko.com/products/expressive-rdf-mapper/)
 
-|Features                        |YARRRML translator|YARRRML parser|ShExML  translator|Stardog (to RDF)|XRM  Translator|
+|Features                        |YATTER|YARRRML parser|ShExML  translator|Stardog (to RDF)|XRM  Translator|
 |:------------------------------:|:----------------:|:------------:|:----------------:|:--------------:|:-------------:|
 |          [R2]RML-core          |      23/23       |    18/23     |     18/18**      |     13/13      |     11/11     |
 |            RML-star            |       6/6        |     N/A      |       N/A        |      2/2       |      N/A      |
